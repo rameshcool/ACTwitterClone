@@ -54,12 +54,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLogin.setOnClickListener(this);
 
         if (ParseUser.getCurrentUser() != null) {
-            ParseUser.getCurrentUser().logOut();
+           // ParseUser.getCurrentUser().logOut();
             transitionToSocialMediaActivity();
         }
     }
 
     private void transitionToSocialMediaActivity() {
+
+        Intent intent = new Intent(MainActivity.this, TwitterUsers.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
